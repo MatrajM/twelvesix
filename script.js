@@ -17,6 +17,17 @@ function showCountriesList(resp) {
     resp.forEach(function(item) {
         var liEl = document.createElement('li');
         liEl.innerText = item.name;
-        countriesList.appendChild(liEl);   
+        countriesList.appendChild(liEl);
+        var stats = document.createElement('ul');
+        liEl.appendChild(stats);
+        var statsCap = document.createElement('li');
+        var statsPop = document.createElement('li');
+        var statsCur = document.createElement('li');
+        stats.appendChild(statsCap);
+        stats.appendChild(statsPop);
+        stats.appendChild(statsCur);
+        statsCap.innerText = 'Capital city is: ' + item.capital;   
+        statsPop.innerText = 'Population is: ' + item.population;
+        statsCur.innerText = 'Currency is: ' + item.currencies;
      });
 }
